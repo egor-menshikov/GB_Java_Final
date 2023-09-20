@@ -1,4 +1,6 @@
-public class Prize {
+package items;
+
+public class Prize implements Item<Prize> {
     private static int count = 1;
     private final int id;
     private final String name;
@@ -25,7 +27,7 @@ public class Prize {
 
     @Override
     public String toString() {
-        return "Prize{" +
+        return "items.Prize{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", weightProbability=" + weightProbability +
