@@ -1,6 +1,7 @@
 package prizepool;
 
 import items.Item;
+import items.Prize;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -40,4 +41,17 @@ public class PrizePool<T extends Item<T>> {
         }
     }
 
+    private T issuePrize() {
+        return winningsQueue.poll();
+    }
+
+//    public static void main(String[] args) {
+//        PrizePool<Prize> pool = new PrizePool<>();
+//        Prize one = new Prize("car", 3);
+//        pool.addToPool(one);
+//        pool.rollPrize();
+//
+//    }
 }
+
+
