@@ -27,10 +27,9 @@ public class Prize implements Item<Prize> {
 
     @Override
     public String toString() {
-        return "items.Prize{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", weightProbability=" + weightProbability +
-                '}';
+        return "Prize: " +
+                "id = " + id +
+                ", name = " + name +
+                ", weightProbability = " + weightProbability;
     }
 }
