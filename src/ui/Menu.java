@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Menu {
     private boolean runStatus;
-    private PrizePool<Prize> pool;
-    private TextUI text;
-    private Scanner sc;
+    private final PrizePool<Prize> pool;
+    private final TextUI text;
+    private final Scanner sc;
 
     public Menu() {
         this.pool = new PrizePool<>();
@@ -58,8 +58,19 @@ public class Menu {
     private Prize inputPrize() {
         System.out.println(text.promptName);
         String name = sc.nextLine();
+        while (name.isEmpty()) {
+            System.out.println(text.promptWrongFormat);
+            name = sc.nextLine();
+        }
+
         System.out.println(text.promptWeight);
-        int weight = Integer.parseInt(sc.nextLine());
+        String weightString = sc.nextLine();
+        while (!weightString.matches("^\\d+$")) {
+            System.out.println(text.promptWrongFormat);
+            weightString = sc.nextLine();
+        }
+        int weight = Integer.parseInt(weightString);
+
         return new Prize(name, weight);
     }
 }

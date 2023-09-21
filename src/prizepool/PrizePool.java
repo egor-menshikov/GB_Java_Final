@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class PrizePool<T extends Item<T>> {
-    private final String PATH = "src\\prizes.txt";
-    private ArrayList<T> prizePool; // сюда добавляем и отсюда тянем призы
-    private ArrayDeque<T> winningsQueue; // это очередь выдачи призов
+    private final ArrayList<T> prizePool; // сюда добавляем и отсюда тянем призы
+    private final ArrayDeque<T> winningsQueue; // это очередь выдачи призов
     private int weightSum; // суммарный вес призов, увеличивается при добавлении товаров
 
     public PrizePool() {
@@ -51,6 +50,7 @@ public class PrizePool<T extends Item<T>> {
         if (item == null) {
             System.out.println("Очередь призов пуста, нечего выдавать.");
         } else {
+            String PATH = "src\\prizes.txt";
             try (BufferedWriter bw = new BufferedWriter(
                     new FileWriter(PATH, true))) {
                 bw.write(item.toString());

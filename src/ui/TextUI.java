@@ -9,6 +9,7 @@ public class TextUI {
     protected String promptWeight;
     protected String addConfirm;
     protected String listEmpty;
+    protected String promptWrongFormat;
 
     public TextUI() {
         this.hello = "Начало работы. Автомат игрушек.\n";
@@ -25,5 +26,6 @@ public class TextUI {
         this.addConfirm = "Игрушка добавлена в призовой пул.";
         this.goodbye = "Завершение работы. До свидания.";
         this.listEmpty = "Этот список пока пуст.\n";
+        this.promptWrongFormat = "Неверный формат ввода, попробуйте еще раз.";
     }
 }
