@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class PrizePool<T extends Item<T>> {
-    private final String PATH = "src\\data\\prizes.txt";
+    private final String PATH = "src\\prizes.txt";
     private ArrayList<T> prizePool; // сюда добавляем и отсюда тянем призы
     private ArrayDeque<T> winningsQueue; // это очередь выдачи призов
     private int weightSum; // суммарный вес призов, увеличивается при добавлении товаров
