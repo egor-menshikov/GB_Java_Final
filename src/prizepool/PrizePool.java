@@ -1,12 +1,14 @@
 package prizepool;
 
 import items.Item;
+import items.Prize;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Random;
 
 public class PrizePool<T extends Item<T>> {
@@ -21,12 +23,12 @@ public class PrizePool<T extends Item<T>> {
         this.weightSum = 0;
     }
 
-    private void addToPool(T item) {
+    public void addToPool(T item) {
         prizePool.add(item);
         weightSum += item.getWeightProbability();
     }
 
-    private void rollPrize() {
+    public void rollPrize() {
         if (prizePool.isEmpty()) {
             System.out.println("Список призового пула пуст.");
             return;
@@ -40,11 +42,12 @@ public class PrizePool<T extends Item<T>> {
             currentWeight += item.getWeightProbability();
             if (roll <= currentWeight) {
                 winningsQueue.add(item);
+                return;
             }
         }
     }
 
-    private void issuePrize() {
+    public void issuePrize() {
         T item = winningsQueue.poll();
         if (item == null) {
             System.out.println("Очередь призов пуста, нечего выдавать.");
@@ -60,12 +63,25 @@ public class PrizePool<T extends Item<T>> {
         }
     }
 
+    public ArrayList<T> getPrizePool() {
+        return prizePool;
+    }
+
+    public ArrayDeque<T> getWinningsQueue() {
+        return winningsQueue;
+    }
+
+
 //    public static void main(String[] args) {
 //        PrizePool<Prize> pool = new PrizePool<>();
 //        Prize one = new Prize("car", 3);
+//        Prize two = new Prize("doll", 3);
+//        Prize three = new Prize("lego", 1);
 //        pool.addToPool(one);
+//        pool.addToPool(two);
+//        pool.addToPool(three);
 //        pool.rollPrize();
-//        pool.issuePrize();
+//        pool.rollPrize();
 //        pool.issuePrize();
 //    }
 }
