@@ -44,10 +44,15 @@ public class Menu {
     }
 
     private void printList(Collection<Prize> list) {
+        if (list.isEmpty()) {
+            System.out.println(text.listEmpty);
+            return;
+        }
         for (Prize item :
                 list) {
             System.out.println(item);
         }
+        System.out.println();
     }
 
     private Prize inputPrize() {

@@ -1,14 +1,12 @@
 package prizepool;
 
 import items.Item;
-import items.Prize;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Random;
 
 public class PrizePool<T extends Item<T>> {
@@ -42,6 +40,7 @@ public class PrizePool<T extends Item<T>> {
             currentWeight += item.getWeightProbability();
             if (roll <= currentWeight) {
                 winningsQueue.add(item);
+                System.out.println("Добавлено:\n" + item);
                 return;
             }
         }
@@ -71,19 +70,6 @@ public class PrizePool<T extends Item<T>> {
         return winningsQueue;
     }
 
-
-//    public static void main(String[] args) {
-//        PrizePool<Prize> pool = new PrizePool<>();
-//        Prize one = new Prize("car", 3);
-//        Prize two = new Prize("doll", 3);
-//        Prize three = new Prize("lego", 1);
-//        pool.addToPool(one);
-//        pool.addToPool(two);
-//        pool.addToPool(three);
-//        pool.rollPrize();
-//        pool.rollPrize();
-//        pool.issuePrize();
-//    }
 }
 
 

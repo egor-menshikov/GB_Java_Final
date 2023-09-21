@@ -8,9 +8,10 @@ public class TextUI {
     protected String promptName;
     protected String promptWeight;
     protected String addConfirm;
+    protected String listEmpty;
 
     public TextUI() {
-        this.hello = "Начало работы. Автомат игрушек.";
+        this.hello = "Начало работы. Автомат игрушек.\n";
         this.menuPrompt = "Выберите пункт меню:";
         this.menuList = """
                 1) Добавить игрушку в призовой пул.
@@ -23,5 +24,6 @@ public class TextUI {
         this.promptWeight = "Введите вероятность (вес):";
         this.addConfirm = "Игрушка добавлена в призовой пул.";
         this.goodbye = "Завершение работы. До свидания.";
+        this.listEmpty = "Этот список пока пуст.\n";
     }
 }
