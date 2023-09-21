@@ -1,0 +1,15 @@
+Prize: id = 4, name = кен (парень барби), weightProbability = 1
+Prize: id = 3, name = травмат, weightProbability = 4
+Prize: id = 6, name = спиннер, weightProbability = 4
+Prize: id = 6, name = спиннер, weightProbability = 4
+Prize: id = 6, name = спиннер, weightProbability = 4
+Prize: id = 6, name = спиннер, weightProbability = 4
+Prize: id = 1, name = машинка, weightProbability = 2
+Prize: id = 8, name = йо-йо, weightProbability = 3
+Prize: id = 6, name = спиннер, weightProbability = 4
+Prize: id = 3, name = травмат, weightProbability = 4
+Prize: id = 7, name = самолетик, weightProbability = 3
+Prize: id = 5, name = черепашки ниньзя, weightProbability = 1
+Prize: id = 2, name = барби, weightProbability = 2
+Prize: id = 3, name = травмат, weightProbability = 4
+Prize: id = 8, name = йо-йо, weightProbability = 3
